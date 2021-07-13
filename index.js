@@ -135,50 +135,99 @@ console.log('Task 3 - Dog feeder');
 
 function hungryDog(weight, age){
   let result = -1;
+  const ZERO = 0;
+  const ONE = 1;
+  const FIVE = 5;
+  const SIX = 6;
+  const TEN = 10;
+  const ELEVEN = 11;
+  const FIFTEEN = 15;
+  const ZERO_MONTHS = 0;
+  const TWO_MONTHS = 2/12;
+  const FOUR_MONTHS = 4/12;
+  const SEVEN_MONTHS = 0.583;
+  const TWELVE_MONTHS = 1;
+  const ONE_PERCENT = 0.01;
+  const TWO_PERCENT = 0.02;
+  const THREE_PERCENT = 0.03;
+  const FOUR_PERCENT = 0.04;
+  const FIVE_PERCENT = 0.05;
+  const TEN_PERCENT = 0.10;
 
   //Puppies less than 1 year
-  if (age > 0 && age < 1) {
+  if (age > ZERO && age < ONE) {
 
     // less than 2 months, then no food
     // 0 months to less than 2 months
-    if (age < 2/12)
+    if (age >= ZERO_MONTHS && age < TWO_MONTHS) {
+      return ZERO;
+    }
 
     // 2 - 4 months 10% of their body weight
     // 2 months to less than 4 months
-    if (age <= 5) {
+    if (age >= TWO_MONTHS && age < FOUR_MONTHS) {
+      return weight*TEN_PERCENT;
+    }
 
     // 4 - 7 months 5% of their body weight 
     // 4 months to less than 7 months
+    if (age >= FOUR_MONTHS && age < SEVEN_MONTHS ) {
+      return weight * FIVE_PERCENT;
+    }
 
     // 7 - 12 months 4% of their body weight
     // 7 months to less than 12 months
-
+    if(age >= SEVEN_MONTHS && age < TWELVE_MONTHS){
+      return weight * FOUR_PERCENT;
     }
+
+  }//end outter if
   
   //Adult Dogs 1 year and older 
-  }else if (age > 1) {
-    result = 10;
+  else if (age >= ONE) {
 
     // up to 5 lbs - 5% of their body weight
     // greater than 0 lbs to less than or equal to 5 lbs
+    if (weight > ZERO && weight <= FIVE) {
+      return weight * FIVE_PERCENT;
+    }
 
     // 6 - 10 lbs - 4% of their body weight 
     // greater than 6 lbs to less than or equal to 10 lbs
+    if (weight > SIX && weight <= TEN) {
+      return weight * FOUR_PERCENT;
+    }
     
     // 11 - 15 lbs - 3% of their body weight 
     // greater than 11 lbs to less than or equal to 15 lbs
+    if (weight > ELEVEN && weight <= FIFTEEN){
+      return weight * THREE_PERCENT;
+    }
     
     // > 15lbs - 2% of their body weight 
     // greater than 15 lbs
+    if ( weight > FIFTEEN){
+      return weight * TWO_PERCENT;
+    }
 
+  }//end outter else if
+  else{
+
+    //return -1 if error occured
+    return -1;
   }
-
-  return result;
-}
+}//end hungryDog function
 
 console.log("weight = 10, age = -0.5, hungryDog return " + hungryDog(10,-0.5) );
-console.log("weight = 10, age = 0.5, hungryDog return " + hungryDog(10,0.5) );
-console.log("weight = 10, age = 2.5, hungryDog return " + hungryDog(10,2.5) );
+console.log("weight = 10, age = 0.1, hungryDog return " + hungryDog(10,0.1) );
+console.log("weight = 10, age = 0.3, hungryDog return " + hungryDog(10,0.3) );
+console.log("weight = 10, age = 0.6, hungryDog return " + hungryDog(10,0.6) );
+console.log("weight = 10, age = 0.11, hungryDog return " + hungryDog(10,0.11) );
+console.log("weight = 4, age = 2, hungryDog return " + hungryDog(4,2) );
+console.log("weight = 7, age = 2, hungryDog return " + hungryDog(7,2) );
+console.log("weight = 12, age = 2, hungryDog return " + hungryDog(12,2) );
+console.log("weight = 16, age = 2, hungryDog return " + hungryDog(16,2) );
+console.log("weight = 4, age = 0.583, hungryDog return " + hungryDog(4,0.583) ); //return 0.16
 
 /*🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 4 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀*/
 
@@ -201,8 +250,53 @@ RULES OF THE GAME: Scissors beats Paper | Paper beats Rock | Rock beats Scissors
 HINT: Remember that the order in which we pass in our arguments matters when it comes to parameters
 */
 
+console.log('');
+console.log('Task 4 - Rock, Paper, Scissors');
+
 function game(user, computer){
-  /*add your code here*/
+
+  const ROCK = "rock";
+  const PAPER = "paper";
+  const SCISSORS = "scissors";
+  const TIE = "it's a tie";
+  const USER_WIN = "you win!";
+  const USER_LOSE = "you lose!";
+
+  //tie
+  if(user === computer) {
+    return TIE;
+  }
+  
+  if(user === ROCK && computer === PAPER)
+  {
+    return USER_LOSE;
+  }
+
+  if(user === ROCK && computer === SCISSORS)
+  {
+    return USER_WIN;
+  }
+
+  if(user === PAPER && computer === ROCK)
+  {
+    return USER_WIN;
+  }
+
+  if(user === PAPER && computer === SCISSORS)
+  {
+    return USER_LOSE;
+  }
+
+  if(user === SCISSORS && computer === ROCK)
+  {
+    return USER_LOSE;
+  }
+  
+  if(user === SCISSORS && computer === PAPER)
+  {
+    return USER_WIN;
+  }
+
 }
 
 
@@ -218,8 +312,12 @@ Using the miles function below do the following:
 3. Return the number of miles
 */
 
-function miles(/*add your code here*/){
-  /*add your code here*/
+console.log('');
+console.log('Task 5a - KM to Miles');
+
+function miles(kilometers){
+  const ratio = 0.621371;
+  return kilometers*ratio;
 }
 
 
@@ -232,8 +330,9 @@ Using the feet function below do the following:
 3. Return number of feet
 */
 
-function feet(/*add your code here*/){
-  /*add your code here*/
+function feet(cm){
+  const ratio = 30.48;
+  return cm/ratio;
 }
 
 
@@ -248,8 +347,10 @@ Using the annoyingSong function below do the following:
     "{number} bottles of soda on the wall, {number} bottles of soda, take one down pass it around {number left over} bottles of soda on the wall"
 */
 
-function annoyingSong(/*add your code here*/){
-      /*add your code here*/
+function annoyingSong(number){
+
+      return `${number} bottles of soda on the wall, ${number} bottles of soda, take one down pass it around ${number - 1} bottles of soda on the wall`;
+      
 }
 
 
@@ -268,8 +369,34 @@ Using the grade function below do the following:
  below should return 'you got an F'
 */
 
-function grade(/*Your Code here */){
-/*Your Code here */
+console.log('');
+console.log('Task 6 - Grade Calculator');
+
+function grade(score){
+  // 90-100 should return 'you got an A' 
+  if( score >= 90 && score <= 100) {
+    return "you got an A";
+  }
+
+  // 80-89 should return 'you got a B'
+  if( score >= 80  && score <=89 ) {
+    return "you got a B";
+  }
+
+  // 70-79 should return 'you got a C'
+  if( score >=70  && score <=79 ) {
+    return "you got a C";
+  }
+
+  // 60-69 should return 'you got a D'
+  if( score >= 60 && score <= 69 ) {
+    return "you got a D";
+  }
+
+  // below should return 'you got an F'
+  if( score >=0  && score <=59 ) {
+    return "you got an F";
+  }
 }
 
 
