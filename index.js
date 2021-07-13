@@ -127,7 +127,7 @@ Puppies less than 1 year
    4 - 7 months 5% of their body weight 
    7 - 12 months 4% of their body weight
   
-NOTE: If done correctly, a weight of 15 lbs and age of 1 year would return 0.44999999999999996
+NOTE:   If done correctly, a weight of 15 lbs and age of 1 year would return 0.44999999999999996
 */  
 
 console.log('');
