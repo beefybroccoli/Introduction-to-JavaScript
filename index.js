@@ -19,6 +19,11 @@ Do the following:
 
    HINT: no function required
 */
+console.log('Task 1a');
+const votingAge = 19;
+if (votingAge >= 18) {
+  console.log('true');
+}
 
 
 
@@ -32,7 +37,14 @@ Do the following:
 
    HINT: no function required
 */
-
+console.log('');
+console.log('Task 1b');
+let var1 = 5;
+let var2 = 10;
+if (var2 < 10) {
+  var1 = var1 - 2;
+}
+console.log('var1 value = `${var1}`');
 
 
 
@@ -47,8 +59,11 @@ Do the following:
 
    HINT: look up the Number method
 */
-
-
+console.log('');
+console.log('Task 1c');
+let string_year = '1999';
+let num_year = Number(string_year);
+console.log('num_year value = ' + num_year);
 
 
 /*
@@ -60,10 +75,13 @@ Do the following:
    3. Multiply a and b and return the answer
 */
 
-function multiply(/*add your code here*/){
-  /*add your code here*/
-}
+console.log('');
+console.log('Task 1d - Multiply');
 
+function multiply(a,b){
+  return a*b;
+}
+console.log("5 * 2 = " + multiply(5,2));
 
 
 /*🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 2 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀*/
@@ -76,10 +94,13 @@ Do the following:
  3. Return the newly calculated age
 */
 
-function dogYears(/*add your code here*/){
-  /*add your code here*/
-}
+console.log('');
+console.log('Task 2 - Age in Dog Years');
 
+function dogYears(age){
+  return age * 7;
+}
+console.log("2 dog = " + dogYears(2) + " human years");
 
 
 /*🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 3 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀*/
@@ -109,11 +130,55 @@ Puppies less than 1 year
 NOTE: If done correctly, a weight of 15 lbs and age of 1 year would return 0.44999999999999996
 */  
 
-function hungryDog(/*add your code here*/){
-  /*add your code here*/
+console.log('');
+console.log('Task 3 - Dog feeder');
+
+function hungryDog(weight, age){
+  let result = -1;
+
+  //Puppies less than 1 year
+  if (age > 0 && age < 1) {
+
+    // less than 2 months, then no food
+    // 0 months to less than 2 months
+    if (age < 2/12)
+
+    // 2 - 4 months 10% of their body weight
+    // 2 months to less than 4 months
+    if (age <= 5) {
+
+    // 4 - 7 months 5% of their body weight 
+    // 4 months to less than 7 months
+
+    // 7 - 12 months 4% of their body weight
+    // 7 months to less than 12 months
+
+    }
+  
+  //Adult Dogs 1 year and older 
+  }else if (age > 1) {
+    result = 10;
+
+    // up to 5 lbs - 5% of their body weight
+    // greater than 0 lbs to less than or equal to 5 lbs
+
+    // 6 - 10 lbs - 4% of their body weight 
+    // greater than 6 lbs to less than or equal to 10 lbs
+    
+    // 11 - 15 lbs - 3% of their body weight 
+    // greater than 11 lbs to less than or equal to 15 lbs
+    
+    // > 15lbs - 2% of their body weight 
+    // greater than 15 lbs
+
+  }
+
+  return result;
 }
 
-
+console.log("weight = 10, age = -0.5, hungryDog return " + hungryDog(10,-0.5) );
+console.log("weight = 10, age = 0.5, hungryDog return " + hungryDog(10,0.5) );
+console.log("weight = 10, age = 2.5, hungryDog return " + hungryDog(10,2.5) );
 
 /*🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 4 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀*/
 
