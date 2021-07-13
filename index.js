@@ -145,7 +145,7 @@ function hungryDog(weight, age){
   const ZERO_MONTHS = 0;
   const TWO_MONTHS = 2/12;
   const FOUR_MONTHS = 4/12;
-  const SEVEN_MONTHS = 0.583;
+  const SEVEN_MONTHS = 0.583; //7 months is define as three decimal number
   const TWELVE_MONTHS = 1;
   const ONE_PERCENT = 0.01;
   const TWO_PERCENT = 0.02;
@@ -187,7 +187,7 @@ function hungryDog(weight, age){
   else if (age >= ONE) {
 
     // up to 5 lbs - 5% of their body weight
-    // greater than 0 lbs to less than or equal to 5 lbs
+    // greater than 0 lbs to less than or equal  to 5 lbs
     if (weight > ZERO && weight <= FIVE) {
       return weight * FIVE_PERCENT;
     }
@@ -298,7 +298,6 @@ function game(user, computer){
   }
 
 }
-
 
 
 /*🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 5 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀*/
